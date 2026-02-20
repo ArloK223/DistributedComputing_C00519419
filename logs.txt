@@ -1,0 +1,21 @@
+
+    1  ls
+    2  pwd
+    3  whoami
+    4  uname -a
+    5  df -h
+    6  du -sh .
+    7  mkdir testdir
+    8  cd testdir
+    9  touch file1.txt
+   10  echo "hello world" > file1.txt
+   11  cat file1.txt
+   12  cp file1.txt file2.txt
+   13  mv file2.txt file3.txt
+   14  chmod 755 file3.txt
+   15  head -n 1 file3.txt
+   16  tail -n 1 file3.txt
+   17  ps aux
+   18  top
+   19  history
+   20  diff
