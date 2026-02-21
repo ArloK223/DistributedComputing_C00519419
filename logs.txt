@@ -1,21 +1,184 @@
+[ec2-user@ip-172-31-23-250 ~]$ ls
+logs.txt  testdir
+[ec2-user@ip-172-31-23-250 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-23-250 ~]$ whoami
+ec2-user
+[ec2-user@ip-172-31-23-250 ~]$ uname -a
+Linux ip-172-31-23-250.ec2.internal 6.1.161-183.298.amzn2023.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Jan 27 05:01:22 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+[ec2-user@ip-172-31-23-250 ~]$ df -h
+Filesystem        Size  Used Avail Use% Mounted on
+devtmpfs          4.0M     0  4.0M   0% /dev
+tmpfs             459M     0  459M   0% /dev/shm
+tmpfs             184M  436K  183M   1% /run
+/dev/nvme0n1p1    8.0G  1.7G  6.3G  21% /
+tmpfs             459M     0  459M   0% /tmp
+/dev/nvme0n1p128   10M  1.3M  8.7M  13% /boot/efi
+tmpfs              92M     0   92M   0% /run/user/1000
+[ec2-user@ip-172-31-23-250 ~]$ du -sh
+700K    .
+[ec2-user@ip-172-31-23-250 ~]$ mkdir testdir2
+[ec2-user@ip-172-31-23-250 ~]$ cd testdir2
+[ec2-user@ip-172-31-23-250 testdir2]$ touch file1.txt
+[ec2-user@ip-172-31-23-250 testdir2]$ echo "hello world" > file1.txt
+[ec2-user@ip-172-31-23-250 testdir2]$ cat file1.txt
+hello world
+[ec2-user@ip-172-31-23-250 testdir2]$ cp file1.txt file2.txt
+[ec2-user@ip-172-31-23-250 testdir2]$ mv file2.txt file3.txt
+[ec2-user@ip-172-31-23-250 testdir2]$ chmod 755 file3.txt
+[ec2-user@ip-172-31-23-250 testdir2]$ head -n 1 file3.txt
+hello world
+[ec2-user@ip-172-31-23-250 testdir2]$ tail -n 1 file3.txt
+hello world
+[ec2-user@ip-172-31-23-250 testdir2]$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  1.8 172584 17656 ?        Ss   Feb20   0:05 /usr/lib/syst
+root           2  0.0  0.0      0     0 ?        S    Feb20   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Feb20   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Feb20   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   Feb20   0:00 [slub_flushwq
+root           6  0.0  0.0      0     0 ?        I<   Feb20   0:00 [netns]
+root           8  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kworker/0:0H
+root          10  0.0  0.0      0     0 ?        I<   Feb20   0:00 [mm_percpu_wq
+root          11  0.0  0.0      0     0 ?        I    Feb20   0:00 [rcu_tasks_kt
+root          12  0.0  0.0      0     0 ?        I    Feb20   0:00 [rcu_tasks_ru
+root          13  0.0  0.0      0     0 ?        I    Feb20   0:00 [rcu_tasks_tr
+root          14  0.0  0.0      0     0 ?        S    Feb20   0:00 [ksoftirqd/0]
+root          15  0.0  0.0      0     0 ?        I    Feb20   0:01 [rcu_preempt]
+root          16  0.0  0.0      0     0 ?        S    Feb20   0:00 [migration/0]
+root          18  0.0  0.0      0     0 ?        S    Feb20   0:00 [cpuhp/0]
+root          19  0.0  0.0      0     0 ?        S    Feb20   0:00 [cpuhp/1]
+root          20  0.0  0.0      0     0 ?        S    Feb20   0:00 [migration/1]
+root          21  0.0  0.0      0     0 ?        S    Feb20   0:00 [ksoftirqd/1]
+root          23  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kworker/1:0H
+root          26  0.0  0.0      0     0 ?        S    Feb20   0:00 [kdevtmpfs]
+root          27  0.0  0.0      0     0 ?        I<   Feb20   0:00 [inet_frag_wq
+root          28  0.0  0.0      0     0 ?        S    Feb20   0:00 [kauditd]
+root          29  0.0  0.0      0     0 ?        S    Feb20   0:00 [khungtaskd]
+root          30  0.0  0.0      0     0 ?        S    Feb20   0:00 [oom_reaper]
+root          32  0.0  0.0      0     0 ?        I<   Feb20   0:00 [writeback]
+root          33  0.0  0.0      0     0 ?        S    Feb20   0:02 [kcompactd0]
+root          35  0.0  0.0      0     0 ?        SN   Feb20   0:00 [khugepaged]
+root          36  0.0  0.0      0     0 ?        I<   Feb20   0:00 [cryptd]
+root          37  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kintegrityd]
+root          38  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kblockd]
+root          39  0.0  0.0      0     0 ?        I<   Feb20   0:00 [blkcg_punt_b
+root          40  0.0  0.0      0     0 ?        I<   Feb20   0:00 [tpm_dev_wq]
+root          41  0.0  0.0      0     0 ?        I<   Feb20   0:00 [md]
+root          42  0.0  0.0      0     0 ?        I<   Feb20   0:00 [edac-poller]
+root          43  0.0  0.0      0     0 ?        S    Feb20   0:00 [watchdogd]
+root          44  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kworker/0:1H
+root          68  0.0  0.0      0     0 ?        S    Feb20   0:00 [kswapd0]
+root          71  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfsalloc]
+root          72  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfs_mru_cach
+root          75  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kthrotld]
+root         122  0.0  0.0      0     0 ?        I<   Feb20   0:00 [nvme-wq]
+root         124  0.0  0.0      0     0 ?        I<   Feb20   0:00 [nvme-reset-w
+root         126  0.0  0.0      0     0 ?        I<   Feb20   0:00 [nvme-delete-
+root         152  0.0  0.0      0     0 ?        I<   Feb20   0:00 [mld]
+root         153  0.0  0.0      0     0 ?        I<   Feb20   0:00 [ipv6_addrcon
+root         154  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kworker/1:1H
+root         173  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kstrp]
+root         183  0.0  0.0      0     0 ?        I<   Feb20   0:00 [zswap-shrink
+root         184  0.0  0.0      0     0 ?        I<   Feb20   0:00 [kworker/u5:0
+root         775  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfs-buf/nvme
+root         776  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfs-conv/nvm
+root         777  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfs-reclaim/
+root         778  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfs-blockgc/
+root         779  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfs-inodegc/
+root         781  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfs-log/nvme
+root         782  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xfs-cil/nvme
+root         783  0.0  0.0      0     0 ?        S    Feb20   0:21 [xfsaild/nvme
+root         830  0.0  2.6  61740 25044 ?        Ss   Feb20   0:02 /usr/lib/syst
+root        1240  0.0  1.1  31996 11264 ?        Ss   Feb20   0:00 /usr/lib/syst
+systemd+    1264  0.0  1.5  22572 14992 ?        Ss   Feb20   0:00 /usr/lib/syst
+root        1267  0.0  0.2  21192  2276 ?        S<sl Feb20   0:00 /sbin/auditd
+root        1271  0.0  0.0      0     0 ?        I<   Feb20   0:00 [rpciod]
+root        1273  0.0  0.0      0     0 ?        I<   Feb20   0:00 [xprtiod]
+root        1296  0.0  0.0      0     0 ?        I<   Feb20   0:00 [ena]
+root        1404  0.0  0.6  16372  6428 ?        Ss   Feb20   0:00 /usr/bin/syst
+root        1407  0.0  0.3  81428  3144 ?        Ssl  Feb20   0:02 /usr/sbin/irq
+libstor+    1408  0.0  0.2   2780  1988 ?        Ss   Feb20   0:00 /usr/bin/lsmd
+root        1411  0.0  0.8  16876  7972 ?        Ss   Feb20   0:00 /usr/lib/syst
+root        1412  0.0  1.0  18848  9912 ?        Ss   Feb20   0:00 /usr/lib/syst
+dbus        1434  0.0  0.4   8492  4152 ?        Ss   Feb20   0:00 /usr/bin/dbus
+systemd+    1435  0.0  1.0 236968 10080 ?        Ss   Feb20   0:00 /usr/lib/syst
+dbus        1437  0.0  0.3   5388  2860 ?        S    Feb20   0:00 dbus-broker -
+root        1440  0.0  0.1   2692  1140 ?        S    Feb20   0:00 /usr/sbin/acp
+root        1442  0.0  0.3 281952  3720 ?        Ssl  Feb20   0:00 /usr/sbin/gss
+root        1570  0.0  2.0 1240432 19364 ?       Ssl  Feb20   0:03 /usr/bin/amaz
+root        1574  0.0  0.9  14396  8592 ?        Ss   Feb20   0:00 sshd: /usr/sb
+root        1594  0.0  0.2   4784  2656 ?        Ss   Feb20   0:00 /usr/sbin/atd
+root        1596  0.0  0.1 221368  1096 tty1     Ss+  Feb20   0:00 /sbin/agetty
+root        1597  0.0  0.1 221412  1088 ttyS0    Ss+  Feb20   0:00 /sbin/agetty
+chrony      1605  0.0  0.4  86460  3932 ?        S    Feb20   0:02 /usr/sbin/chr
+root        2447  0.0  0.7  16372  6920 ?        Ss   Feb20   0:00 /usr/lib/syst
+root       64115  0.0  0.0      0     0 ?        I    17:40   0:00 [kworker/1:1-
+root       65024  0.0  0.0      0     0 ?        I    18:16   0:00 [kworker/u4:0
+root       65436  0.0  0.0      0     0 ?        I    18:33   0:00 [kworker/u4:1
+root       65485  0.0  0.0      0     0 ?        I    18:35   0:00 [kworker/0:0-
+root       65633  0.0  0.0      0     0 ?        I    18:40   0:00 [kworker/0:2-
+root       65636  0.0  0.0      0     0 ?        I    18:40   0:00 [kworker/1:2-
+root       65637  0.0  0.0      0     0 ?        I    18:40   0:00 [kworker/u4:2
+root       65843  0.0  0.0      0     0 ?        I    18:45   0:00 [kworker/0:1-
+root       65844  0.0  0.0      0     0 ?        I    18:45   0:00 [kworker/0:3-
+root       65845  0.0  0.0      0     0 ?        I    18:45   0:00 [kworker/1:0-
+root       65847  0.0  1.0  15864 10224 ?        Ss   18:46   0:00 sshd: ec2-use
+ec2-user   65869  0.0  1.4  22004 13792 ?        Ss   18:46   0:00 /usr/lib/syst
+ec2-user   65891  0.0  0.7 173924  6924 ?        S    18:46   0:00 (sd-pam)
+ec2-user   65908  0.0  0.6  15864  6136 ?        S    18:46   0:00 sshd: ec2-use
+ec2-user   65909  0.0  0.5 224052  5040 pts/0    Ss   18:46   0:00 -bash
+root       65940  0.0  0.7  16732  6840 ?        S    18:47   0:00 systemd-userw
+root       65941  0.0  0.7  16732  6832 ?        S    18:47   0:00 systemd-userw
+root       65942  0.0  0.7  16732  6796 ?        S    18:47   0:00 systemd-userw
+ec2-user   65950  0.0  0.3 223600  2876 pts/0    R+   18:48   0:00 ps aux
+[ec2-user@ip-172-31-23-250 testdir2]$ top
+top - 18:48:26 up 1 day,  1:31,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks: 100 total,   1 running,  99 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :    916.8 total,    320.7 free,    185.5 used,    410.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    593.6 avail Mem
 
-    1  ls
-    2  pwd
-    3  whoami
-    4  uname -a
-    5  df -h
-    6  du -sh .
-    7  mkdir testdir
-    8  cd testdir
-    9  touch file1.txt
-   10  echo "hello world" > file1.txt
-   11  cat file1.txt
-   12  cp file1.txt file2.txt
-   13  mv file2.txt file3.txt
-   14  chmod 755 file3.txt
-   15  head -n 1 file3.txt
-   16  tail -n 1 file3.txt
-   17  ps aux
-   18  top
-   19  history
-   20  diff
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  172584  17656  10864 S   0.0   1.9   0:05.26 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.03 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par+
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_fl+
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_perc+
+     11 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     12 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     14 root      20   0       0      0      0 S   0.0   0.0   0:00.56 ksoftir+
+     15 root      20   0       0      0      0 I   0.0   0.0   0:01.31 rcu_pre+
+     16 root      rt   0       0      0      0 S   0.0   0.0   0:00.37 migrati+
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
+     20 root      rt   0       0      0      0 S   0.0   0.0   0:00.40 migrati+
+[ec2-user@ip-172-31-23-250 testdir2]$ history
+    1  sudo yum update -y
+    2  sudo yum install tmux -y
+    3  sudo yum install git -y
+    4  tmux -V
+    5  git --version
+    6  ls
+    7  pwd
+    8  whoami
+    9  uname -a
+   10  df -h
+   11  du -sh
+   12  mkdir testdir2
+   13  cd testdir2
+   14  touch file1.txt
+   15  echo "hello world" > file1.txt
+   16  cat file1.txt
+   17  cp file1.txt file2.txt
+   18  mv file2.txt file3.txt
+   19  chmod 755 file3.txt
+   20  head -n 1 file3.txt
+   21  tail -n 1 file3.txt
+   22  ps aux
+   23  top
+   24  history
